@@ -457,9 +457,8 @@ FROM
 WHERE 
 	`ccsa`.`collation_name` = `t`.`table_collation`
 	AND `t`.`table_schema` = '{$this->mysql_database}'
-	#AND `t`.`table_name` LIKE '{$this->mysql_prefix}%'
-	AND `t`.`table_name` = 'utf8_nucleus_item'
-	#AND `ccsa`.`character_set_name` <> '{$this->new_character_set}'
+	AND `t`.`table_name` LIKE '{$this->mysql_prefix}%'
+	AND `ccsa`.`character_set_name` <> '{$this->new_character_set}'
 END;
 		$result = sql_query($query, $this->schema_connection);
 		$number_tables = sql_num_rows($result);
